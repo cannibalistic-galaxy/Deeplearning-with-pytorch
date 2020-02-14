@@ -64,7 +64,7 @@ $$
 
 ==梯度使指损失函数关于权重参数的导数。==
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\线性回归\5.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task1_Task2_Figures/5.PNG)
 
 在上式中，$∣B∣$ 代表每个小批量中的样本个数（批量大小，batch size），$η$ 称作学习率（learning  rate）并取正数。需要强调的是，这里的批量大小和学习率的值是人为设定的，并不是通过模型训练学出的，因此叫作超参数（hyperparameter）。我们通常所说的“调参”指的正是调节超参数，例如通过反复试错来找到超参数合适的值。
 
@@ -98,11 +98,11 @@ x.view(-1,4) #不确定要几行，但是要4列
 
 整体思路如下：
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\线性回归\4.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task1_Task2_Figures/4.PNG)
 
 softmax层是一个单层神经网络：
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\线性回归\3.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task1_Task2_Figures/3.PNG)
 
 softmax的核心公式：
 $$
@@ -283,7 +283,7 @@ def sgd(params, lr, batch_size):  # 本函数已保存在d2lzh_pytorch包中方�
 
 ##  4 文本预处理
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\线性回归\6.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task1_Task2_Figures/6.PNG)
 
 ###  4.1 读入文本
 
@@ -528,7 +528,7 @@ def load_data_jay_lyrics():
 
 如图所示，首先把时间序列（黑色框）划分为长度等于时间步数`num_steps`的分组（蓝色框），如果最后剩余一段长度不足时间步数，就直接忽略掉。每个分组都是个样本。然后从每个分组中选取`batch_size`，每个分组只取一次。
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\线性回归\7.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task1_Task2_Figures/7.PNG)
 
 下面的代码每次从数据里随机采样一个小批量。其中批量大小`batch_size`指每个小批量的样本数，`num_steps`为每个样本所包含的时间步数。 在随机采样中，每个样本是原始序列上任意截取的一段序列。相邻的两个随机小批量在原始序列上的位置不一定相毗邻。因此，我们无法用一个小批量最终时间步的隐藏状态来初始化下一个小批量的隐藏状态。在训练模型时，每次随机采样前都需要重新初始化隐藏状态。
 
@@ -586,11 +586,11 @@ Y: tensor([[ 1,  2,  3,  4,  5,  6],
 
 如图，假设batch_size=3，则先三等分序列（如果后面多出来则舍去）。红色为第一个batch，绿色为第二个batch，蓝色为第三个batch。这里的`num_steps`应该决定的就是每个颜色块的长度，即每个batch的长度。
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\线性回归\8.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task1_Task2_Figures/8.PNG)
 
 实现思路就是将序列转化为一个二维数组，然后每个batch转化数组的一列，如下图所示：
 
-<img src="E:\Github\GithubProject\DeeplearningWithPytorch\笔记\线性回归\9.PNG" style="zoom: 150%;" />
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task1_Task2_Figures/9.PNG)
 
 代码分析：
 
@@ -653,15 +653,15 @@ RNN是一类处理序列数据的神经网络。
 
 核心思想：每一时刻重复使用权重矩阵。
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\线性回归\11.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task1_Task2_Figures/11.PNG)
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\线性回归\12.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task1_Task2_Figures/12.PNG)
 
 RNN不再是一个马尔可夫模型，每一步预测都基于之前的所有信息。
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\线性回归\13.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task1_Task2_Figures/13.PNG)
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\线性回归\14.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task1_Task2_Figures/14.PNG)
 
 ###  6.2 不含隐藏状态的神经网络
 
@@ -677,7 +677,7 @@ $$
 
 ###  6.3 含隐藏状态的循环神经网络
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\线性回归\15.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task1_Task2_Figures/15.PNG)
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\线性回归\10.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task1_Task2_Figures/10.PNG)
 

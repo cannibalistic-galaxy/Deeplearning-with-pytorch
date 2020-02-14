@@ -4,7 +4,7 @@
 
 ###  1.1 框架
 
-<img src="E:\Github\GithubProject\DeeplearningWithPytorch\笔记\线性回归\捕获.PNG" style="zoom: 150%;" />
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task1_Task2_Figures/1.PNG)
 
 ###  1.2 线性回归的过程
 

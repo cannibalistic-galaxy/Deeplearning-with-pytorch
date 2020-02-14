@@ -82,7 +82,7 @@ $$
 
 ==解答==：注意7是批量大小，此全连接层应如图所示
 
-<img src="E:\Github\GithubProject\DeeplearningWithPytorch\笔记\线性回归\2.PNG" style="zoom:50%;" />
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task1_Task2_Figures/2.PNG)
 
 题目2：
 

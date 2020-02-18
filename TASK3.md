@@ -2,7 +2,7 @@
 
 ##  1 模型选择、过拟合、欠拟合
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\2.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/2.PNG)
 
 ###  1.1 代码解析
 
@@ -92,9 +92,9 @@ def fit_and_plot(train_features, test_features, train_labels, test_labels):
 
 ###  1.2 权重衰减
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\3.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/3.PNG)
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\4.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/4.PNG)
 
 迭代过程中后面的项的系数不变，前面项的系数衰减了。
 
@@ -102,7 +102,7 @@ def fit_and_plot(train_features, test_features, train_labels, test_labels):
 
 本文介绍的是倒置丢弃法（inverted dropout）
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\5.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/5.PNG)
 
 注意，这里的超参数$\xi$的取值为0或1。
 
@@ -149,7 +149,7 @@ def net(X, is_training=True):
 
 假设输出层只保留一个输出单元$o_1$（删去$o_2$和$o_3$以及指向它们的箭头），且隐藏层使用相同的激活函数。如果将每个隐藏单元的参数都初始化为相等的值，那么==在正向传播时每个隐藏单元将根据相同的输入计算出相同的值，并传递至输出层==。在反向传播中，每个隐藏单元的参数梯度值相等。因此，这些参数在使用基于梯度的优化算法==迭代后值依然相等==。之后的迭代也是如此。在这种情况下，无论隐藏单元有多少，隐藏层本质上==只有1个隐藏单元==在发挥作用。因此，正如在前面的实验中所做的那样，我们通常将神经网络的模型参数，特别是权重参数，进行随机初始化。
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\6.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/6.PNG)
 
 随机初始化模型参数的方法有很多。在线性回归的简洁实现中，我们使用`torch.nn.init.normal_()`使模型`net`的权重参数采用正态分布的随机初始化方式。不过，PyTorch中`nn.Module`的模块参数都采取了较为合理的初始化策略（不同类型的layer具体采样的哪一种初始化方法的可参考[源代码](https://github.com/pytorch/pytorch/tree/master/torch/nn/modules)），因此一般不用我们考虑。
 
@@ -185,7 +185,7 @@ $$
 
 三者个人理解为：==协变量偏移是x改变，标签偏移是y改变 概念偏移是y的定义改变==
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\7.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/7.PNG)
 
 ###  2.6 Kaggle比赛
 
@@ -195,38 +195,38 @@ $$
 
 RNN的结构：
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\21.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/21.PNG)
 
 问题：容易出现梯度衰减或梯度爆炸。
 
 ###  3.1 门控循环神经网络（GRU）：
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\22.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/22.PNG)
 
 -  重置⻔有助于捕捉时间序列⾥短期的依赖关系；
 -  更新⻔有助于捕捉时间序列⾥⻓期的依赖关系。
 
 需要初始化的参数：一共9+2+1=12个参数。
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\23.png)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/23.PNG)
 
 ###  3.2 长短期记忆（LSTM）long short-term memory
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\24.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/24.PNG)
 
 输出门是输出到隐藏状态的流动，其他的门都是到输出的状态流动。
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\25.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/25.PNG)
 
 参数：==注意此处的$C_{-1}$也是要初始化的，图上忘记标注了==。
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\26.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/26.PNG)
 
 ###  3.3 深度循环神经网络
 
 结构如图：
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\27.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/30.PNG)
 
 ```python
 gru_layer = nn.LSTM(input_size=vocab_size, hidden_size=num_hiddens,num_layers=2)
@@ -234,11 +234,11 @@ gru_layer = nn.LSTM(input_size=vocab_size, hidden_size=num_hiddens,num_layers=2)
 
 只要令num_layers=2，就能得到一个二层的循环神经网络。即得到如下图所示红框部分组成的网络：
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\28.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/28.PNG)
 
 ###  3.4 双向循环神经网络
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\29.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/29.PNG)
 
 ```python
 gru_layer = nn.GRU(input_size=vocab_size, hidden_size=num_hiddens,bidirectional=True)
@@ -246,4 +246,4 @@ gru_layer = nn.GRU(input_size=vocab_size, hidden_size=num_hiddens,bidirectional=
 
 令bidirectional=True即可实现双向循环神经网络。
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\30.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/1.PNG)

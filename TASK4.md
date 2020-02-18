@@ -6,7 +6,7 @@
 
 数据集格式：
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\40.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/40.PNG)
 
 处理代码：
 
@@ -28,7 +28,7 @@ print(text[0:1000])
 
 结果：
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\41.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/41.PNG)
 
 ###  1.2 分词
 
@@ -72,7 +72,7 @@ len(src_vocab)
 
 其中Vocab定义如下：
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\42.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/42.PNG)
 
 ###  1.4 读取数据集
 
@@ -133,7 +133,7 @@ Valid lengths for Y = tensor([7, 7])
 
 为了解决输入和输出不对等
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\43.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/43.PNG)
 
 先把输入变成隐藏状态，当Decoder最后一个得到eos时，认为结束了。
 
@@ -141,9 +141,9 @@ Valid lengths for Y = tensor([7, 7])
 
 Encoder可以是循环神经网络，然后输出Hidden state
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\44.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/44.PNG)
 
-![](E:\Github\GithubProject\DeeplearningWithPytorch\笔记\TASK3&TASK4&TASK5\图片\45.PNG)
+![](https://github.com/cannibalistic-galaxy/Deeplearning-with-pytorch/blob/master/Task3_Task4_Task5_Figures/45.PNG)
 
 ```python
 class Seq2SeqEncoder(d2l.Encoder):
